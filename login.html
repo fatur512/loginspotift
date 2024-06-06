@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Spotify</title>
+  <link rel="icon" type="image/x-icon" href="./headicon.png">
+  <link rel="stylesheet" href="./login.css">
+
+</head>
+
+<body>
+  <nav>
+    <div class="logo">
+      <a href="#"><img src="./Spotify-logo.png"></a>
+    </div>
+  </nav>
+  <div class="container">
+    <h1>Log in to Spotify</h1>
+
+    <a
+      href="https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?response_type=code&access_type=offline&client_id=1046568431490-ij1gi5shcp2gtorls09frkc56d4mjbe2.apps.googleusercontent.com&state=AQD0HEvP%2FcVSX%2BGS3vg2O0kUi0KdOF4UcH7rJ8BGzYOhBglqM95OWYDFbq%2BaW5%2F925W1zh39AmYaZv5YLp2rUKs7cTZVI8uAIVgXGfBwmi9%2BrBwEiuKwVX0BFnmY7xSSnvJeXywiPznS%2Bw5BDdYv7CEpJzv8jiXV%2FDkX24886KVvVRMdIrDW5UC4FOBtnih1BcXks9OPArMH0pTTumNgW596c6kf8%2BQUduViN5vP%2F%2Fe1xquZ8mMpPOGeDa26vKbxw9%2B5TLGZQ7xxjxySiprBNsPaA%2BjFovH8ovg%3D&scope=profile%20email%20openid&redirect_uri=https%3A%2F%2Faccounts.spotify.com%2Flogin%2Fgoogle%2Fredirect&service=lso&o2v=2&ddm=0&flowName=GeneralOAuthFlow">
+      <button type="menu">
+
+        <img src="iconspo.jpg"><b>Continue with Google</b>
+      </button>
+    </a>
+    <a
+      href="https://web.facebook.com/privacy/consent/gdp/?params%5Bapp_id%5D=174829003346&params%5Bkid_directed_site%5D=false&params%5Blogger_id%5D=%227617562d-f92b-44c0-a95b-ffb4ba3834d9%22&params%5Bnext%5D=%22confirm%22&params%5Bredirect_uri%5D=%22https%3A%5C%2F%5C%2Faccounts.spotify.com%5C%2Flogin%5C%2Ffacebook%5C%2Fredirect%22&params%5Breturn_scopes%5D=false&params%5Bscope%5D=%5B%5D&params%5Bstate%5D=%22AQAsK6AxitoHuBexQYivDESww%2Bo1eszg1BsMg1EoPCg3kvX5OOt0WNGxgo3kquJRwO5KeLzXcuRKZWkPJLOEykdyTCW7yD2uXAFY00PMK2QAhTxcfCrzASqjJFPD%5C%2F0cgdCT%5C%2FaVeXQea466vZXmPC0vyE4KDVRBX42rgIiI81O4LUN2j9vWAEYnh5h%5C%2Fcx48BJGZ9ObrntH7gxC80HGUMGJ2Hnb0clALQvjCUPH4O5z9HJRhl5g5sUwHxSbRZloSqI697oKuGNYB%2BikA5cbXN4xEjNFCMSe81MOJ4%3D%22&params%5Bsteps%5D=%7B%7D&params%5Btp%5D=%22unspecified%22&params%5Bcui_gk%5D=%22%5BPASS%5D%3Alogin_platformization_confirm%22&params%5Bis_limited_login_shim%5D=false&source=gdp_delegated">
+      <button type="menu">
+        <img src="./iconspo.jpg"><b>Continue with Facebook</b>
+
+      </button>
+    </a>
+    <a href="https://accounts.spotify.com/en/login/phone?flow_ctx=4926b863-ec29-41d6-933d-267c33eaf9ba:1717149074">
+      <button type="menu"><img src="./iconspo.jpg"><b>Continue with phone number</b>
+      </button>
+    </a>
+
+
+    <br>
+    <hr>
+
+    <br> <br>
+    <div class="loginInfo" id="root">
+      <!-- username -->
+      <label for="uname"><b>Email or username</b> </label>
+      <input type="text" placeholder="Email or username" name="uname" id="inputUser" required>
+      <!-- password -->
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Password" name="psw" id="inputPass" required>
+      <!-- button -->
+      <button onclick="onLogin()" type="submit" id="loginButton">
+        <a class="login3" href="./indexx.html">Login</a>
+        </button>
+
+      <label>
+        <div class="remember">
+          <input type="checkbox" checked="checked" name="remember" />
+          <label for="remember">Remember Me</label>
+        </div>
+
+        <button type="text"><b>Forgot Password? </b></button>
+      </label>
+
+    </div>
+
+    <footer>
+      <p>This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply</p>
+    </footer>
+
+    <script type="application/javascript">
+      let inputUser = document.getElementById('inputUser');
+      let inputPass = document.getElementById('inputPass');
+      let loginButton = document.getElementById('loginButton');
+
+
+      alert(`Wajib 18+`)
+prompt('berapa usia anda?')
+      // console.log('aman')
+
+      function onLogin() {
+        localStorage.setItem("username", inputUser.value);
+        return 
+
+        if (inputUser.value == "admin" && inputPass.value == "admin123"){
+          alert('login sebagai admin');
+          localStorage.setItem("role", "admin");
+          inputUser.style.display = "none";
+          inputPass.style.display = "none";
+          loginButton.style.display = "none";
+        } else {
+          alert('login sebagai user');
+          localStorage.setItem("role", "user");
+          inputUser.style.display = "none";
+          inputPass.style.display = "none";
+          loginButton.style.display = "none";
+        }
+
+      }   
+    </script>
+  </div>
+</body>
+</html>
